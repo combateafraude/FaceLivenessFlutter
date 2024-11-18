@@ -1,0 +1,7 @@
+pubspec_overrides.yaml
+.dart_tool/
+.idea/
+.DS_Store
+.vscode
+keys/
+**/build/**
