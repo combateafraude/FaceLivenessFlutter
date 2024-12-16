@@ -1,6 +1,6 @@
 name: caf_face_liveness
 description: "A Flutter plugin for Caf.io solution for facial verification. This plugin uses smart cameras to capture reliable selfies of your users with artificial intelligence, detecting and rejecting photo and video spoofing attempts. It's ideal for secure and seamless onboarding processes."
-version: 5.0.0
+version: 5.0.1
 homepage: https://www.caf.io/
 
 environment:
