@@ -72,7 +72,16 @@ public class FaceLivenessPlugin: NSObject, FlutterPlugin, FlutterStreamHandler {
             fatalError(Constants.viewControllerErrorMessage)
         }
 
-        faceLiveness?.startSDK(viewController: viewController, mobileToken: mobileToken, personId: personId)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            self.faceLiveness?.startSDK(viewController: viewController, mobileToken: mobileToken, personId: personId)
+        }
+    }
+
+    private func sendEvent(_ event: Any) {
+        guard let sink = sink else {
+            return
+        }
+        sink(event)
     }
 
     public func onListen(withArguments arguments: Any?, eventSink events: @escaping FlutterEventSink) -> FlutterError? {
@@ -94,8 +103,8 @@ extension FaceLivenessPlugin: FaceLivenessDelegate {
         sdkResult["event"] = Constants.eventSuccess
         sdkResult["signedResponse"] = livenessResult.signedResponse
 
-        self.sink?(sdkResult)
-        self.sink?(FlutterEndOfEventStream)
+        sendEvent(sdkResult)
+        sendEvent(FlutterEndOfEventStream)
         faceLiveness = nil
     }
 
@@ -105,16 +114,16 @@ extension FaceLivenessPlugin: FaceLivenessDelegate {
         sdkResult["errorType"] = sdkFailure.errorType?.rawValue
         sdkResult["errorDescription"] = sdkFailure.description
 
-        self.sink?(sdkResult)
-        self.sink?(FlutterEndOfEventStream)
+        sendEvent(sdkResult)
+        sendEvent(FlutterEndOfEventStream)
         faceLiveness = nil
     }
 
     public func didFinishWithCancelled() {
         sdkResult["event"] = Constants.eventCanceled
 
-        self.sink?(sdkResult)
-        self.sink?(FlutterEndOfEventStream)
+        sendEvent(sdkResult)
+        sendEvent(FlutterEndOfEventStream)
         faceLiveness = nil
     }
 
@@ -123,25 +132,21 @@ extension FaceLivenessPlugin: FaceLivenessDelegate {
     
     public func openLoadingScreenStartSDK() {
         sdkResult["event"] = Constants.eventConnecting
-        
-        self.sink?(sdkResult)
+        sendEvent(sdkResult)
     }
     
     public func closeLoadingScreenStartSDK() {
         sdkResult["event"] = Constants.eventConnected
-        
-        self.sink?(sdkResult)
+        sendEvent(sdkResult)
     }
     
     public func openLoadingScreenValidation() {
         sdkResult["event"] = Constants.eventValidating
-        
-        self.sink?(sdkResult)
+        sendEvent(sdkResult)
     }
     
     public func closeLoadingScreenValidation() {
         sdkResult["event"] = Constants.eventValidated
-        
-        self.sink?(sdkResult)
+        sendEvent(sdkResult)
     }
 }
