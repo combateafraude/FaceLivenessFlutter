@@ -15,7 +15,7 @@ Check out our dedicated documentation page for this SDK Plugin. See more details
 
 | Android | Version |
 | ------- | ------- |
-| minSdk | 21 |
+| minSdk | 26 |
 | compileSdk | 34 |
 
 | iOS | Version |
