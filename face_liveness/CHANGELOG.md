@@ -2,6 +2,20 @@
 
 This is a continuation of the [new_face_liveness](https://pub.dev/packages/new_face_liveness) package, with necessary adjustments made to align with the updated project structure.
 
+## v5.0.1 (Dec, 11 2024)
+
+### Android
+
+#### Highlights
+
+- Updated FaceLiveness SDK from `3.2.0` to [`3.2.3`](https://docs.caf.io/sdks/android/release-notes#faceliveness-3.2.3).
+
+### iOS
+
+#### Highlights
+
+- Updated FaceLiveness SDK from `6.1.0` to [`6.3.2`](https://docs.caf.io/sdks/ios/release-notes#faceliveness-6.3.2). 
+
 ## v5.0.0 (Sep, 25 2024)
 
 ### Android
