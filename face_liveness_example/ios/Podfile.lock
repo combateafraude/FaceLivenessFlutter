@@ -1,17 +1,17 @@
 PODS:
-  - caf_face_liveness (5.0.0):
-    - FaceLiveness (= 6.1.0)
+  - caf_face_liveness (5.0.1):
+    - FaceLiveness (= 6.3.2)
     - Flutter
-  - CafSolutions (1.0.0)
-  - FaceLiveness (6.1.0):
-    - CafSolutions (= 1.0.0)
+  - CafSolutions (1.0.1)
+  - FaceLiveness (6.3.2):
+    - CafSolutions (= 1.0.1)
     - FingerprintPro (= 2.6.0)
-    - iProov (= 12.0.0)
+    - iProov (= 12.2.1)
   - FingerprintPro (2.6.0)
   - Flutter (1.0.0)
   - integration_test (0.0.1):
     - Flutter
-  - iProov (12.0.0)
+  - iProov (12.2.1)
 
 DEPENDENCIES:
   - caf_face_liveness (from `.symlinks/plugins/caf_face_liveness/ios`)
@@ -34,13 +34,13 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/integration_test/ios"
 
 SPEC CHECKSUMS:
-  caf_face_liveness: 995b34b5cc05bc173158abc5f136c00c6e3997a7
-  CafSolutions: e75556929faaea2ae5840619e36bdb3c89a82c85
-  FaceLiveness: f10c316ad1365698988baba5924f7a7c7192ab70
+  caf_face_liveness: e947ba1b17b602edfa01a19935c48eab7038e2a0
+  CafSolutions: d509f8672793cc8c022a91b203c84886682ca478
+  FaceLiveness: c62b4be6d56e6e9db07e35b9c899c4f95321b952
   FingerprintPro: 3f06f491c77d871ab543b49fd25fddc52dc34f8c
   Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
   integration_test: 13825b8a9334a850581300559b8839134b124670
-  iProov: 1921d2fdbd8f8fa24d4694c2150c2c0bac0371a6
+  iProov: d1c8fed3e9b7c1602a326d4789bbf883d3563880
 
 PODFILE CHECKSUM: b7995f9cf5079a43a8a278835b1749513e50fe40
 
