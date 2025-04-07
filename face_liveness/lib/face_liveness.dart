@@ -1,7 +1,8 @@
 import 'dart:async';
 
-import 'package:caf_face_liveness/reverse_proxy_settings.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_caf_face_liveness/reverse_proxy_settings.dart';
+
 import 'face_liveness_enums.dart';
 import 'face_liveness_events.dart';
 

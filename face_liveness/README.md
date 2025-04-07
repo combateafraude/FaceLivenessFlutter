@@ -21,13 +21,7 @@ Ensure compliance with our [Privacy Policy](https://en.caf.io/politicas/politica
 
 ## Installation
 
-1. **Clone the Repository**:  
-   ```sh
-   git clone https://github.com/combateafraude/FaceLivenessFlutter
-   ```
-   Place it in your project directory.
-
-2. **Add Dependency**: Update `pubspec.yaml`:
+**Add Dependency**: Update `pubspec.yaml`:
    ```yaml
    dependencies:
      flutter_caf_face_liveness: ^1.0.0

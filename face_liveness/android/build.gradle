@@ -5,7 +5,7 @@ buildscript {
     ext {
         kotlin_version = '1.9.20'
         gradle_version = '8.3.2'
-        face_liveness_sdk_version = '3.2.3'
+        face_liveness_sdk_version = '4.1.0'
         mockito_core_version = '5.0.0'
     }
 
@@ -60,7 +60,7 @@ android {
     }
 
     dependencies {
-        implementation "com.combateafraude.sdk:new-face-liveness:$face_liveness_sdk_version"
+        implementation "io.caf.sdk:new-face-liveness:$face_liveness_sdk_version"
 
         testImplementation 'org.jetbrains.kotlin:kotlin-test'
         testImplementation "org.mockito:mockito-core:$mockito_core_version"

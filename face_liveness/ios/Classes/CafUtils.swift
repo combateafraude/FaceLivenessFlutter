@@ -20,14 +20,14 @@ extension FaceLivenessPlugin {
         static let unknownState = "unknown state error"
     }
     
-    func getCafStage(stage: String) -> CAFStage {
+    func getCafStage(stage: String) -> CafEnvironment {
         switch stage {
         case "PROD":
-            return CAFStage.prod
+            return CafEnvironment.prod
         case "BETA":
-            return CAFStage.beta
+            return CafEnvironment.beta
         default:
-            return CAFStage.prod
+            return CafEnvironment.prod
         }
     }
     

@@ -1,21 +1,21 @@
 PODS:
-  - caf_face_liveness (5.0.1):
-    - FaceLiveness (= 6.3.2)
-    - Flutter
-  - CafSolutions (1.0.1)
-  - FaceLiveness (6.3.2):
-    - CafSolutions (= 1.0.1)
-    - FingerprintPro (= 2.6.0)
-    - iProov (= 12.2.1)
-  - FingerprintPro (2.6.0)
+  - CafSolutions (2.0.3)
+  - FaceLiveness (7.1.0):
+    - CafSolutions (= 2.0.3)
+    - FingerprintPro (= 2.7.0)
+    - iProov (= 12.3.0)
+  - FingerprintPro (2.7.0)
   - Flutter (1.0.0)
+  - flutter_caf_face_liveness (5.0.1):
+    - FaceLiveness (= 7.1.0)
+    - Flutter
   - integration_test (0.0.1):
     - Flutter
-  - iProov (12.2.1)
+  - iProov (12.3.0)
 
 DEPENDENCIES:
-  - caf_face_liveness (from `.symlinks/plugins/caf_face_liveness/ios`)
   - Flutter (from `Flutter`)
+  - flutter_caf_face_liveness (from `.symlinks/plugins/flutter_caf_face_liveness/ios`)
   - integration_test (from `.symlinks/plugins/integration_test/ios`)
 
 SPEC REPOS:
@@ -26,21 +26,21 @@ SPEC REPOS:
     - iProov
 
 EXTERNAL SOURCES:
-  caf_face_liveness:
-    :path: ".symlinks/plugins/caf_face_liveness/ios"
   Flutter:
     :path: Flutter
+  flutter_caf_face_liveness:
+    :path: ".symlinks/plugins/flutter_caf_face_liveness/ios"
   integration_test:
     :path: ".symlinks/plugins/integration_test/ios"
 
 SPEC CHECKSUMS:
-  caf_face_liveness: e947ba1b17b602edfa01a19935c48eab7038e2a0
-  CafSolutions: d509f8672793cc8c022a91b203c84886682ca478
-  FaceLiveness: c62b4be6d56e6e9db07e35b9c899c4f95321b952
-  FingerprintPro: 3f06f491c77d871ab543b49fd25fddc52dc34f8c
+  CafSolutions: 20411e1e1ff433d3da400433cd45c6db09c2f6de
+  FaceLiveness: 6c853bbf712542e3567c971078131ed6d8c12dd2
+  FingerprintPro: 0c7dbd28fc83751ca64b06328e2fb22bbc7ed118
   Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
-  integration_test: 13825b8a9334a850581300559b8839134b124670
-  iProov: d1c8fed3e9b7c1602a326d4789bbf883d3563880
+  flutter_caf_face_liveness: a230f21fc6896839de6ce5b50b34e2ac25a144f2
+  integration_test: 252f60fa39af5e17c3aa9899d35d908a0721b573
+  iProov: 15d820ec17fe833a1d5d4c9a046f68a0aea7fe4c
 
 PODFILE CHECKSUM: b7995f9cf5079a43a8a278835b1749513e50fe40
 

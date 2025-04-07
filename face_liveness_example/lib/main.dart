@@ -1,7 +1,7 @@
-import 'package:caf_face_liveness/face_liveness.dart';
-import 'package:caf_face_liveness/face_liveness_enums.dart';
-import 'package:caf_face_liveness/face_liveness_events.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_caf_face_liveness/face_liveness.dart';
+import 'package:flutter_caf_face_liveness/face_liveness_enums.dart';
+import 'package:flutter_caf_face_liveness/face_liveness_events.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,8 +15,9 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  final String _mobileToken = "sample_mobile_token";
-  final String _personId = "sample_person_id";
+  final String _mobileToken =
+      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiI2NTRjZmFlMWM5YTM0NTAwMDg4YzIwODUifQ.maH9fynasnaRR2Hm5PxQ1XzLxlVZiZSvpVDD9zVtfgs";
+  final String _personId = "12312312309";
 
   late final FaceLiveness _faceLiveness;
 
@@ -27,7 +28,8 @@ class _MyAppState extends State<MyApp> {
   }
 
   void _initializeFaceLiveness() {
-    _faceLiveness = FaceLiveness(mobileToken: _mobileToken, personId: _personId);
+    _faceLiveness =
+        FaceLiveness(mobileToken: _mobileToken, personId: _personId);
     _faceLiveness.setStage(CafStage.prod);
     _faceLiveness.setCameraFilter(CameraFilter.natural);
     _faceLiveness.setEnableScreenshots(true);
@@ -50,7 +52,8 @@ class _MyAppState extends State<MyApp> {
       } else if (event is FaceLivenessEventSuccess) {
         print('SDK Success! \nSignedResponse: ${event.signedResponse}');
       } else if (event is FaceLivenessEventFailure) {
-        print('SDK Failure! \nError type: ${event.errorType} \nError Message: ${event.errorDescription}');
+        print(
+            'SDK Failure! \nError type: ${event.errorType} \nError Message: ${event.errorDescription}');
       }
     });
   }

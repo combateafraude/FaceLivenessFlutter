@@ -4,12 +4,13 @@ import android.content.Context
 import android.os.Looper
 import com.caf.facelivenessiproov.input.CAFStage
 import com.caf.facelivenessiproov.input.FaceLiveness
+import com.caf.facelivenessiproov.output.FaceLivenessFailureResult
 import com.caf.facelivenessiproov.input.SdkPlatform
 import com.caf.facelivenessiproov.input.Time
 import com.caf.facelivenessiproov.input.VerifyLivenessListener
 import com.caf.facelivenessiproov.input.iproov.Filter
 import com.caf.facelivenessiproov.output.FaceLivenessResult
-import com.caf.facelivenessiproov.output.failure.SDKFailure
+import com.caf.facelivenessiproov.output.failure.SDKError
 import io.flutter.embedding.engine.plugins.FlutterPlugin
 import io.flutter.plugin.common.EventChannel
 import io.flutter.plugin.common.MethodCall
@@ -97,7 +98,14 @@ class FaceLivenessPlugin: FlutterPlugin {
                 }
             }
 
-            override fun onError(sdkFailure: SDKFailure) {
+            override fun onFailure(result: FaceLivenessFailureResult?) {
+                android.os.Handler(Looper.getMainLooper()).post {
+                    eventSink?.success(getFailureResponseMap(result))
+                    eventSink?.endOfStream()
+                }
+            }
+
+            override fun onError(sdkFailure: SDKError) {
                 android.os.Handler(Looper.getMainLooper()).post {
                     eventSink?.success(getErrorResponseMap(sdkFailure))
                     eventSink?.endOfStream()
@@ -132,7 +140,15 @@ class FaceLivenessPlugin: FlutterPlugin {
         return responseMap
     }
 
-    private fun getErrorResponseMap(result: SDKFailure): HashMap<String, Any> {
+    private fun getFailureResponseMap(result: FaceLivenessFailureResult?): HashMap<String, Any> {
+        val responseMap = HashMap<String, Any>()
+        responseMap["event"] = FAILURE_EVENT
+        responseMap["errorType"] = "UnknownFailure"
+        responseMap["errorDescription"] = result?.failureMessage ?: "Unknown failure"
+        return responseMap
+    }
+
+    private fun getErrorResponseMap(result: SDKError): HashMap<String, Any> {
         val responseMap = HashMap<String, Any>()
         responseMap["event"] = FAILURE_EVENT
         responseMap["errorType"] = result.errorType.value

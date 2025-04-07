@@ -17,7 +17,7 @@ dependencies:
   flutter:
     sdk: flutter
 
-  caf_face_liveness:
+  flutter_caf_face_liveness:
     # See https://dart.dev/tools/pub/dependencies#version-constraints
     # The example app is bundled with the plugin so we use a path dependency on
     # the parent directory to use the current plugin's version.

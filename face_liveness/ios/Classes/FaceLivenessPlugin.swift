@@ -99,20 +99,32 @@ public class FaceLivenessPlugin: NSObject, FlutterPlugin, FlutterStreamHandler {
 
 extension FaceLivenessPlugin: FaceLivenessDelegate {
     
-    public func didFinishLiveness(with livenessResult: LivenessResult) {
-        sdkResult["event"] = Constants.eventSuccess
-        sdkResult["signedResponse"] = livenessResult.signedResponse
+    public func didFinishWithFailure(with sdkFailure: FaceLiveness.SDKFailure) {
+        sdkResult["event"] = Constants.eventError
+
+        sdkResult["errorType"] = sdkFailure.failureType ?? "unknown type"
+        sdkResult["errorDescription"] = sdkFailure.description
 
         sendEvent(sdkResult)
         sendEvent(FlutterEndOfEventStream)
         faceLiveness = nil
     }
-
-    public func didFinishWithError(with sdkFailure: SDKFailure) {
+    
+    public func didFinishWithError(with sdkError: FaceLiveness.SDKError) {
         sdkResult["event"] = Constants.eventError
 
-        sdkResult["errorType"] = sdkFailure.errorType?.rawValue
-        sdkResult["errorDescription"] = sdkFailure.description
+        sdkResult["errorType"] = sdkError.errorType?.rawValue
+        sdkResult["errorDescription"] = sdkError.description
+
+        sendEvent(sdkResult)
+        sendEvent(FlutterEndOfEventStream)
+        faceLiveness = nil
+    }
+    
+    
+    public func didFinishLiveness(with livenessResult: LivenessResult) {
+        sdkResult["event"] = Constants.eventSuccess
+        sdkResult["signedResponse"] = livenessResult.signedResponse
 
         sendEvent(sdkResult)
         sendEvent(FlutterEndOfEventStream)

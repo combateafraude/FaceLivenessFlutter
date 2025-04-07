@@ -3,8 +3,8 @@
 # Run `pod lib lint face_liveness.podspec` to validate before publishing.
 #
 Pod::Spec.new do |s|
-  s.name             = 'caf_face_liveness'
-  s.version          = '5.0.1'
+  s.name             = 'flutter_caf_face_liveness'
+  s.version          = '1.0.0'
   s.summary          = 'A Flutter plugin for Caf.io solution for facial verification.'
   s.description      = <<-DESC
 This plugin uses smart cameras to capture reliable selfies of your users with artificial intelligence, detecting and rejecting photo and video spoofing attempts. It's ideal for secure and seamless onboarding processes.
@@ -20,6 +20,6 @@ This plugin uses smart cameras to capture reliable selfies of your users with ar
   s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES', 'VALID_ARCHS[sdk=iphonesimulator*]' => 'x86_64' }
   s.swift_version = '5.3.2'
   s.dependency 'Flutter'
-  s.dependency 'FaceLiveness', '6.3.2'
+  s.dependency 'FaceLiveness', '7.1.0'
   # Add static framework? s.static_framework = true
 end
