@@ -15,8 +15,9 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  final String _mobileToken = "";
-  final String _personId = "";
+
+  final String _mobileToken = "sample_mobile_token";
+  final String _personId = "sample_person_id";
 
   late final FaceLiveness _faceLiveness;
 
