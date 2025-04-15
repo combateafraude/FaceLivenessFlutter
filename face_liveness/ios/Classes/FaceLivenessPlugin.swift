@@ -62,6 +62,10 @@ public class FaceLivenessPlugin: NSObject, FlutterPlugin, FlutterStreamHandler {
             _ = mFaceLivenessBuilder.setImageUrlExpirationTime(time: getExpirationTime(time: expirationTime))
         }
 
+        if let customLocalization = arguments["customLocalization"] as? String {
+            _ = mFaceLivenessBuilder.setCustomLocalization(named: customLocalization)
+        }
+
         // FaceLiveness Build
         self.faceLiveness = mFaceLivenessBuilder.build()
         faceLiveness?.delegate = self

@@ -20,6 +20,6 @@ This plugin uses smart cameras to capture reliable selfies of your users with ar
   s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES', 'VALID_ARCHS[sdk=iphonesimulator*]' => 'x86_64' }
   s.swift_version = '5.3.2'
   s.dependency 'Flutter'
-  s.dependency 'FaceLiveness', '7.1.0'
+  s.dependency 'FaceLiveness', '7.2.1'
   # Add static framework? s.static_framework = true
 end

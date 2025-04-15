@@ -23,6 +23,7 @@ class FaceLiveness {
   bool? enableLoadingScreen;
   UrlExpirationTime? imageUrlExpirationTime;
   ReverseProxySettings? reverseProxySettings;
+  String? _customLocalization;
 
   FaceLiveness({required this.mobileToken, required this.personId});
 
@@ -39,6 +40,11 @@ class FaceLiveness {
   /// This feature works only for Android
   void setEnableScreenshots(bool enable) {
     enableScreenshot = enable;
+  }
+
+  /// This feature works only for iOS
+  void setCustomLocalization(String customLocalization) {
+    _customLocalization = customLocalization;
   }
 
   /// Determines whether the loading screen will be the SDK default implementation or if you will implement your own.
@@ -72,6 +78,10 @@ class FaceLiveness {
     params['enableLoadingScreen'] = enableLoadingScreen;
     params['imageUrlExpirationTime'] = imageUrlExpirationTime?.stringValue;
     params['reverseProxySettings'] = reverseProxySettings?.asMap();
+
+    if (_customLocalization?.isNotEmpty ?? false) {
+      params['customLocalization'] = _customLocalization;
+    }
 
     _livenessMethodChannel.invokeMethod('start', params);
 

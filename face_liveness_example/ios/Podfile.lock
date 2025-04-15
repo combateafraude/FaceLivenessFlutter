@@ -1,13 +1,13 @@
 PODS:
   - CafSolutions (2.0.3)
-  - FaceLiveness (7.1.0):
+  - FaceLiveness (7.2.1):
     - CafSolutions (= 2.0.3)
     - FingerprintPro (= 2.7.0)
     - iProov (= 12.3.0)
   - FingerprintPro (2.7.0)
   - Flutter (1.0.0)
-  - flutter_caf_face_liveness (5.0.1):
-    - FaceLiveness (= 7.1.0)
+  - flutter_caf_face_liveness (1.0.0):
+    - FaceLiveness (= 7.2.1)
     - Flutter
   - integration_test (0.0.1):
     - Flutter
@@ -35,10 +35,10 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   CafSolutions: 20411e1e1ff433d3da400433cd45c6db09c2f6de
-  FaceLiveness: 6c853bbf712542e3567c971078131ed6d8c12dd2
+  FaceLiveness: 37343e9bc679ad2a8b5dad7e1a1cfa734677d027
   FingerprintPro: 0c7dbd28fc83751ca64b06328e2fb22bbc7ed118
   Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
-  flutter_caf_face_liveness: a230f21fc6896839de6ce5b50b34e2ac25a144f2
+  flutter_caf_face_liveness: bf2e3eaf5d170fa6caaa7c24ad437b6d2b5749b6
   integration_test: 252f60fa39af5e17c3aa9899d35d908a0721b573
   iProov: 15d820ec17fe833a1d5d4c9a046f68a0aea7fe4c
 

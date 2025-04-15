@@ -24,7 +24,7 @@ allprojects {
     repositories {
         google()
         mavenCentral()
-        maven { url "https://repo.combateafraude.com/android/release" }
+        maven { url 'https://repo.combateafraude.com/android/release' }
         maven { url 'https://raw.githubusercontent.com/iProov/android/patch912/maven/' }
         maven { url 'https://maven.fpregistry.io/releases' }
         maven { url 'https://jitpack.io' }
